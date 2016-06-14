@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8023D11C-7B93-411D-AB68-BCA1F85C4C69}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PMP</RootNamespace>
+    <AssemblyName>PMP</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicClass\contact.cs" />
+    <Compile Include="PublicClass\ContactFile.cs" />
+    <Compile Include="PublicClass\ReCmd.cs" />
+    <Compile Include="PublicForm\check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicForm\check.Designer.cs">
+      <DependentUpon>check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PublicForm\delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicForm\delete.Designer.cs">
+      <DependentUpon>delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PublicForm\DeleteNum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicForm\DeleteNum.Designer.cs">
+      <DependentUpon>DeleteNum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PublicForm\info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicForm\info.Designer.cs">
+      <DependentUpon>info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PublicForm\Mdi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicForm\Mdi.Designer.cs">
+      <DependentUpon>Mdi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PublicForm\out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicForm\out.Designer.cs">
+      <DependentUpon>out.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PublicForm\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicForm\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PublicForm\seck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicForm\seck.Designer.cs">
+      <DependentUpon>seck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="share.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="share.Designer.cs">
+      <DependentUpon>share.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublicForm\check.resx">
+      <DependentUpon>check.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublicForm\delete.resx">
+      <DependentUpon>delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublicForm\DeleteNum.resx">
+      <DependentUpon>DeleteNum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublicForm\info.resx">
+      <DependentUpon>info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublicForm\Mdi.resx">
+      <DependentUpon>Mdi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublicForm\out.resx">
+      <DependentUpon>out.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublicForm\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublicForm\seck.resx">
+      <DependentUpon>seck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="share.resx">
+      <DependentUpon>share.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PublicData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logon.ico" />
+    <None Include="Resources\mdi.png" />
+    <None Include="Resources\save.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
