@@ -8,6 +8,7 @@ namespace PMP.PublicClass
 {
     class ContactFile
     {
+        //这是一个空引用
         public string AppPath =null;
         public string App = null;
         public static string Name = "num.txt";
