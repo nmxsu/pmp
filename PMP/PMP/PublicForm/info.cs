@@ -245,6 +245,19 @@ namespace PMP.PublicForm
                 }
             }
         }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.textBox1.Text = this.openFileDialog1.FileName;
+            }
+        }
     }
 }
  

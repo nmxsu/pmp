@@ -82,6 +82,9 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.select = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,6 +109,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.select);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.comboBox10);
             this.tabPage1.Controls.Add(this.label7);
@@ -280,11 +285,11 @@
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1135, 629);
+            this.tabPage2.Size = new System.Drawing.Size(1135, 631);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "职员详细信息";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -583,11 +588,11 @@
             this.tabPage3.Controls.Add(this.label24);
             this.tabPage3.Controls.Add(this.label23);
             this.tabPage3.Controls.Add(this.label22);
-            this.tabPage3.Location = new System.Drawing.Point(4, 26);
+            this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Size = new System.Drawing.Size(1135, 629);
+            this.tabPage3.Size = new System.Drawing.Size(1135, 631);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "职员背景信息";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -667,6 +672,28 @@
             this.label22.Size = new System.Drawing.Size(63, 14);
             this.label22.TabIndex = 0;
             this.label22.Text = "教育经历";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // select
+            // 
+            this.select.Location = new System.Drawing.Point(771, 193);
+            this.select.Name = "select";
+            this.select.Size = new System.Drawing.Size(75, 23);
+            this.select.TabIndex = 16;
+            this.select.Text = "选择图片";
+            this.select.UseVisualStyleBackColor = true;
+            this.select.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(915, 193);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 17;
             // 
             // info
             // 
@@ -752,5 +779,8 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ComboBox comboBox10;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button select;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
