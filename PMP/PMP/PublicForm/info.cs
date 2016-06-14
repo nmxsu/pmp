@@ -255,7 +255,7 @@ namespace PMP.PublicForm
         {
             if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                this.textBox1.Text = this.openFileDialog1.FileName;
+                this.pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
             }
         }
     }

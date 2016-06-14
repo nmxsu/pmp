@@ -84,7 +84,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.select = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -109,7 +108,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.select);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.comboBox10);
@@ -175,7 +173,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(853, 202);
+            this.label6.Location = new System.Drawing.Point(875, 197);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 14);
@@ -680,20 +678,13 @@
             // 
             // select
             // 
-            this.select.Location = new System.Drawing.Point(771, 193);
+            this.select.Location = new System.Drawing.Point(806, 197);
             this.select.Name = "select";
             this.select.Size = new System.Drawing.Size(75, 23);
             this.select.TabIndex = 16;
             this.select.Text = "选择图片";
             this.select.UseVisualStyleBackColor = true;
             this.select.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(915, 193);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 17;
             // 
             // info
             // 
@@ -781,6 +772,5 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button select;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
