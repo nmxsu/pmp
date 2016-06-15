@@ -65,6 +65,7 @@
     <Compile Include="PublicClass\contact.cs" />
     <Compile Include="PublicClass\ContactFile.cs" />
     <Compile Include="PublicClass\ReCmd.cs" />
+    <Compile Include="PublicClass\StaffTitleUtil.cs" />
     <Compile Include="PublicForm\check.cs">
       <SubType>Form</SubType>
     </Compile>
