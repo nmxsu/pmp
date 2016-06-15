@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.IO;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,26 +19,30 @@ namespace PMP.PublicForm
             InitializeComponent();
         }
 
+        string pic = "";
+
         private void info_Load(object sender, EventArgs e)
         {
             // 加载部门
             SqlConnection conn = contact.GetConn();
-            SqlCommand cmd = new SqlCommand("select [name] from [dpm]",conn);
+            SqlCommand cmd = new SqlCommand("select [name] from [dpm]", conn);
             cmd.CommandType = CommandType.Text;
             SqlDataReader sdr = cmd.ExecuteReader();
-            while (sdr.Read()){
+            while (sdr.Read())
+            {
                 comboBox10.Items.Add(sdr[0].ToString().Trim());
             }
             contact.GetClose();
             sdr.Close();
             comboBox10.Text = comboBox10.Items[0].ToString();
 
-            
+
             //加载证件类型
             conn.Open();
             cmd.CommandText = "select [name] from [pap]";
             sdr = cmd.ExecuteReader();
-            while (sdr.Read()){
+            while (sdr.Read())
+            {
                 comboBox1.Items.Add(sdr[0].ToString().Trim());
             }
             contact.GetClose();
@@ -48,11 +53,12 @@ namespace PMP.PublicForm
             conn.Open();
             cmd.CommandText = "select [name] from [Province]";
             sdr = cmd.ExecuteReader();
-            while (sdr.Read()){
+            while (sdr.Read())
+            {
                 comboBox3.Items.Add(sdr[0].ToString().Trim());
                 comboBox6.Items.Add(sdr[0].ToString().Trim());
             }
-            
+
             contact.GetClose();
             sdr.Close();
             comboBox3.Text = comboBox3.Items[0].ToString();
@@ -63,7 +69,8 @@ namespace PMP.PublicForm
             conn.Open();
             cmd.CommandText = "select [nation] from [t_nation]";
             sdr = cmd.ExecuteReader();
-            while (sdr.Read()){
+            while (sdr.Read())
+            {
                 comboBox2.Items.Add(sdr[0].ToString());
             }
             contact.GetClose();
@@ -74,13 +81,32 @@ namespace PMP.PublicForm
             conn.Open();
             cmd.CommandText = "select [Name] from [edubk]";
             sdr = cmd.ExecuteReader();
-            while (sdr.Read()){
+            while (sdr.Read())
+            {
                 comboBox9.Items.Add(sdr[0].ToString());
             }
             contact.GetClose();
             sdr.Close();
             comboBox9.Text = comboBox9.Items[0].ToString();
+           
+            //加载图片，从本地获取，上传到数据库
+            try
+            {
+                if (!string.IsNullOrEmpty(pic))
+                {
+                    byte[] imageBytes = Convert.FromBase64String(pic);
+                    MemoryStream memoryStream = new MemoryStream(imageBytes, 0, imageBytes.Length);
+                    memoryStream.Write(imageBytes, 0, imageBytes.Length);
+                    Image image = Image.FromStream(memoryStream);
+
+                    // 将图片放置在 PictureBox 中
+                    this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    this.pictureBox1.Image = image;
+                }
+            }
+            catch { }
         }
+   
 
     
 
@@ -253,11 +279,76 @@ namespace PMP.PublicForm
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
+            /*if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 this.pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+            }*/
+            
+            //选择图片
+            OpenFileDialog openfile = new OpenFileDialog();
+            openfile.Title = " 请选择客户端longin的图片";
+            openfile.Filter = "Login图片 (*.jpg;*.bmp;*png)|*.jpeg;*.jpg;*.bmp;*.png|AllFiles(*.*)|*.*";
+            if (DialogResult.OK == openfile.ShowDialog())
+            {
+                try
+                {
+                    Bitmap bmp = new Bitmap(openfile.FileName);
+                    pictureBox1.Image = bmp;
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    MemoryStream ms = new MemoryStream();
+                    bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+                    byte[] arr = new byte[ms.Length];
+
+                    BinaryReader br = new BinaryReader(ms);
+                    arr = br.ReadBytes(Convert.ToInt32(ms.Length));
+                    string cnnstr = "server=.;User ID=sa;Password=admin;Database=student";
+
+                    SqlConnection conn = new SqlConnection(cnnstr);
+                    conn.Open();
+                    SqlCommand comm = new SqlCommand();
+                    comm.Connection = conn;
+
+                    //数据库
+                    string sql = "insert into a values('01',@image)";
+                    comm.CommandType = CommandType.Text;
+                    comm.CommandText = sql;
+                    comm.Parameters.Add("image", SqlDbType.Image, arr.Length);
+                    comm.Parameters[0].Value = arr;
+                    comm.ExecuteNonQuery();
+                    conn.Close();
+
+
+
+                    SqlDataReader dr = comm.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        if (dr["imagetest"] != DBNull.Value)
+                        {
+                            MemoryStream Ms = new MemoryStream((byte[])dr["imagetest"]);//把照片读到MemoryStream里      
+                            Image imageBlob = Image.FromStream(Ms, true);//用流创建Image  
+
+                            pictureBox1.Image = imageBlob;//输出图片      
+                        }
+                        else//照片字段里没值，清空pb      
+                        {
+                            pictureBox1.Image = null;
+                        }
+                    }
+
+
+                    ms.Position = 0;
+                    ms.Read(arr, 0, (int)ms.Length);
+                    ms.Close();
+                    // 直接返这个值放到数据就行了
+                    pic = Convert.ToBase64String(arr);
+                }
+                catch { }
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-}
- 
+    }

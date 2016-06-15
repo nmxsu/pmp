@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(info));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.select = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -83,7 +84,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.select = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -130,6 +130,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "职员基本信息";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // select
+            // 
+            this.select.Location = new System.Drawing.Point(793, 197);
+            this.select.Name = "select";
+            this.select.Size = new System.Drawing.Size(75, 23);
+            this.select.TabIndex = 16;
+            this.select.Text = "选择图片";
+            this.select.UseVisualStyleBackColor = true;
+            this.select.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -189,6 +199,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(124, 115);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // textBox4
             // 
@@ -675,16 +686,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
-            // select
-            // 
-            this.select.Location = new System.Drawing.Point(806, 197);
-            this.select.Name = "select";
-            this.select.Size = new System.Drawing.Size(75, 23);
-            this.select.TabIndex = 16;
-            this.select.Text = "选择图片";
-            this.select.UseVisualStyleBackColor = true;
-            this.select.Click += new System.EventHandler(this.button2_Click);
             // 
             // info
             // 
