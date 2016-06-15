@@ -56,6 +56,10 @@ namespace PMP.PublicForm
         private void button1_Click(object sender, EventArgs e)
         {
             //查询
+            //string titleOnename = StaffTitleUtil.getTitleByNum();
+            string titleOneName = StaffTitleUtil.getTitleByNum(355687428096000);//考勤管理
+            
+            //string titleTwoName = StaffTitleUtil.getTitleByNum(4485);
             string StrName=null;
             SqlDataReader sdr = ReCmd.ReDataReader(string.Format("select [StaffName] from [StaffState] where [Name]='{0}'", comboBox1.Text.Trim()));
             if (sdr.Read())
@@ -63,15 +67,18 @@ namespace PMP.PublicForm
                 StrName = sdr[0].ToString();
                 sdr.Close();
                 ReCmd.Close();
+                
                 if (share){
                     sdr = ReCmd.ReDataReader(string.Format("select [StaffId] from [Staff] where [{0}]='{1}'",StrName,textBox1.Text.Trim()));
                     sdr.Read();
                     id = Convert.ToInt32(sdr[0]);
                     sda = ReCmd.ReDataAdapter(string.Format("select * from [StaffShare] where [numid]={0}",id));
-                   dt=new DataTable();
+                    dt=new DataTable();
                 }
                 else {
-                    sda = ReCmd.ReDataAdapter(string.Format("select * from [Staff] where [{0}]='{1}'",StrName,textBox1.Text.Trim()));
+                    
+                    sda = ReCmd.ReDataAdapter(string.Format("select "+titleOneName+" from [Staff] where [{0}]='{1}'",StrName,textBox1.Text.Trim()));
+                 
                     dt = new DataTable();
                      
                 }

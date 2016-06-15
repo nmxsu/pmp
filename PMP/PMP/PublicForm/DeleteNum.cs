@@ -26,7 +26,9 @@ namespace PMP.PublicForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter sda = ReCmd.ReDataAdapter(string.Format("select * from [logon] where [num]='{0}'",textBox1.Text.Trim()));
+            string titleOneName = StaffTitleUtil.getTitleByNum(2145);
+
+            SqlDataAdapter sda = ReCmd.ReDataAdapter(string.Format("select "+titleOneName+" from [logon] where [num]='{0}'",textBox1.Text.Trim()));
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridView1.DataSource = dt;

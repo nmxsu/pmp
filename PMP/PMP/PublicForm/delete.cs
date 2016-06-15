@@ -40,7 +40,7 @@ namespace PMP.PublicForm
             sdr.Close();
             ReCmd.Close();
             try {
-                string titleName = StaffTitleUtil.getTitleByNum(21);
+                string titleName = StaffTitleUtil.getTitleByNum(49335);
                 
                 SqlDataAdapter sda = ReCmd.ReDataAdapter(string.Format("select "+titleName+" from [Staff] where [{0}]='{1}'", Str, textBox1.Text.Trim()));
                 DataTable dt = new DataTable();

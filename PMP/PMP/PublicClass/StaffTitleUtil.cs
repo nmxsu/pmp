@@ -14,95 +14,95 @@ namespace PMP.PublicClass
         //姓名Title
         private static string titleNameStr = "姓名";
         private static string titleNameValue = "Name";
-        private static int titleNameIndex = 3;
+        private static int titleNameIndex = 1;
 
         //部门Title
         private static string titleDpmStr = "部门";
         private static string titleDpmValue = "Dpm";
-        private static int titleDpmIndex = 5;
+        private static int titleDpmIndex = 2;
 
         //证件类型Title
         private static string titlePapStr = "证件类型";
         private static string titlePapValue = "Pap";
-        private static int titlePapIndex = 7;
+        private static int titlePapIndex = 3;
 
         //证件号码Title
         private static string titlePapNumStr = "证件号码";
         private static string titlePapNumValue = "PapNum";
-        private static int titlePapNumIndex = 11;
+        private static int titlePapNumIndex = 4;
 
         //头像Title
         private static string titlePhotoStr = "头像";
         private static string titlePhotoValue = "Photo";
-        private static int titlePhotoIndex = 13;
+        private static int titlePhotoIndex = 5;
 
         //入职日期Title
         private static string titleDateInStr = "入职日期";
         private static string titleDateInValue = "DateIn";
-        private static int titleDateInIndex = 17;
+        private static int titleDateInIndex = 6;
 
         //工号Title
         private static string titleStaffNumStr = "工号";
         private static string titleStaffNumValue = "StaffNum";
-        private static int titleStaffNumIndex = 19;
+        private static int titleStaffNumIndex = 7;
 
         //性别Title
         private static string titleSexStr = "性别";
         private static string titleSexValue = "Sex";
-        private static int titleSexIndex = 23;
+        private static int titleSexIndex = 8;
 
-        //名族Title
-        private static string titleNationStr = "名族";
+        //名族Title 
+        private static string titleNationStr = "民族";
         private static string titleNationValue = "Nation";
-        private static int titleNationIndex = 29;
+        private static int titleNationIndex = 9;
 
         //出生地点Title
         private static string titleBirthPlaceStr = "出生地点";
         private static string titleBirthPlaceValue = "BirthPlace";
-        private static int titleBirthPlaceIndex = 31;
+        private static int titleBirthPlaceIndex = 10;
 
         //户籍Title
         private static string titleRegPlaceStr = "户籍";
         private static string titleRegPlaceValue = "RegPlace";
-        private static int titleRegPlaceIndex = 37;
+        private static int titleRegPlaceIndex = 11;
 
         //教育背景Title
         private static string titleEduBkStr = "教育背景";
         private static string titleEduBkValue = "EduBk";
-        private static int titleEduBkIndex = 41;
+        private static int titleEduBkIndex = 12;
 
         //工作日期Title
         private static string titleDateWorkStr = "工作日期";
         private static string titleDateWorkValue = "DateWork";
-        private static int titleDateWorkIndex = 43;
+        private static int titleDateWorkIndex = 13;
 
         //UrgencyTitle
         private static string titleUrgencyNumStr = "紧急号码";
         private static string titleUrgencyNumValue = "UrgencyNum";
-        private static int titleUrgencyNumIndex = 47;
+        private static int titleUrgencyNumIndex = 14;
 
         //教育经历Title
         private static string titleEduExpStr = "教育经验";
         private static string titleEduExpValue = "EduExp";
-        private static int titleEduExpIndex = 53;
+        private static int titleEduExpIndex = 15;
 
         //培训经验Title
         private static string titleTrainExpStr = "培训经验";
         private static string titleTrainExpValue = "TrainExp";
-        private static int titleTrainExpIndex = 59;
+        private static int titleTrainExpIndex = 16;
 
         //工作经验Title
         private static string titleWorkExpStr = "工作经验";
         private static string titleWorkExpValue = "WorkExp";
-        private static int titleWorkExpIndex = 61;
+        private static int titleWorkExpIndex = 17;
 
         //家庭号码Title
         private static string titleFamilyNumStr = "家庭号码";
         private static string titleFamilyNumValue = "FamilyNum";
-        private static int titleFamilyNumIndex = 67;
+        private static int titleFamilyNumIndex = 18;
 
         //得到想要的Title
-        public static string getTitleByNum(int i)
+        public static string getTitleByNum(double i)
         {
             string str = "";
             bool flag = false;
