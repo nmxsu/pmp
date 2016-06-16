@@ -10,7 +10,7 @@ namespace PMP.PublicClass
 {
     class contact
     {
-        public static string ConnStr= "server=127.0.0.1;database=PMP;user id=sa;password=123";
+        public static string ConnStr= "server=192.168.0.30;database=PMP;user id=sa;password=123";
         public static SqlConnection conn=null;
         public static  SqlConnection GetConn() {
             try {
