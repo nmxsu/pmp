@@ -15,9 +15,11 @@ namespace PMP
     public partial class share : seck
     {
         SqlDataReader sdr = null;
+        private Boolean state;
         
-        public share():base("StaffShare",true )
+        public share(bool state):base("StaffShare",true )
         {
+            this.state = state;
             InitializeComponent();
         }
 
@@ -28,15 +30,31 @@ namespace PMP
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int money = 0;
-            sdr = ReCmd.ReDataReader(string.Format("select [money] from [StaffShare] where [numid]={0}",base.id));
-            sdr.Read();
-            money = Convert.ToInt32(sdr[0]);
-            money += Convert.ToInt32(numericUpDown1.Value);
-            sdr.Close();
-            int i = ReCmd.ReExecuteNonQuery(string.Format("update [StaffShare] set [money]={0} where [numid]={1}",money ,base.id));
-            if (i > 0) MessageBox.Show("增减薪资成功");
-            else MessageBox.Show("增减薪资失败");
+            if (state)
+            {
+                int money = 0;
+                sdr = ReCmd.ReDataReader(string.Format("select [money] from [StaffShare] where [numid]={0}", base.id));
+                sdr.Read();
+                money = Convert.ToInt32(sdr[0]);
+                try
+                {
+                    money += Convert.ToInt32(textBox2.Text.ToString().Trim());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("请正确输入！");
+                    return;
+                }
+                sdr.Close();
+                int i = ReCmd.ReExecuteNonQuery(string.Format("update [StaffShare] set [money]={0} where [numid]={1}", money, base.id));
+                if (i > 0) MessageBox.Show("增减薪资成功");
+                else MessageBox.Show("增减薪资失败");
+            }
+            else
+            {
+                MessageBox.Show("你的权限不够！");
+            
+            }
         }
     }
 }

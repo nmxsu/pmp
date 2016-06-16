@@ -105,6 +105,11 @@ namespace PMP.PublicForm
                 }
             }
             catch { }
+
+            //自动生成员工编号
+            DateTime dd = DateTime.Now;
+
+            textBox5.Text = dd.ToString("yyyyMMddHHssmm")+(new Random().Next()%10);
         }
    
 
@@ -249,15 +254,10 @@ namespace PMP.PublicForm
                 if (ok)
                 {
 
-                    int id=0;
+                    string id = "";
                     // sql 命令
                     string str = string.Format("insert into [Staff] (Name,Dpm,Pap,PapNum,StaffNum,Sex,Nation,BirthPlace,RegPlace,EduBk,UrgencyNum,EduExp,TrainExp,WorkExp,FamilyNum) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}')", textBox2.Text.Trim(), comboBox10.Text.Trim(), comboBox1.Text.Trim(), textBox4.Text.Trim(), textBox5.Text.Trim(), radioButton1.Checked ? radioButton1.Text : radioButton2.Text, comboBox2.Text.Trim(), comboBox3.Text.Trim() + comboBox4.Text.Trim() + comboBox5.Text.Trim(), comboBox6.Text.Trim() + comboBox7.Text.Trim() + comboBox8.Text.Trim(), comboBox9.Text.Trim(), textBox6.Text.Trim(), richTextBox1.Text, richTextBox2.Text, richTextBox3.Text, richTextBox4.Text);
-                    SqlDataReader sdr = ReCmd.ReDataReader(string.Format("select [StaffId] from [Staff] where [Name]='{0}'",textBox2.Text.Trim()));
-                    if (sdr.Read()) {
-                        id = Convert.ToInt32(sdr[0]);
-                        ReCmd.ReExecuteNonQuery(string.Format("insert into [StaffShare] (money,numid) values({0},{1})",0,id));
-                    }
-                    sdr.Close();
+                    
                     
                     // 录入
                     SqlConnection conn = contact.GetConn();
@@ -265,6 +265,13 @@ namespace PMP.PublicForm
                     cmd.CommandType = CommandType.Text;
                     if (cmd.ExecuteNonQuery() == 1)
                     {
+                        SqlDataReader sdr = ReCmd.ReDataReader(string.Format("select [StaffNum] from [Staff] where [Name]='{0}'", textBox2.Text.Trim()));
+                        if (sdr.Read())
+                        {
+                            id = sdr[0].ToString();
+                            ReCmd.ReExecuteNonQuery(string.Format("insert into [StaffShare] (money,numid) values({0},{1})", 0, id));
+                        }
+                        sdr.Close();
                         MessageBox.Show(string.Format("录入成功 工号为：{0}",id));
                     }
                     else MessageBox.Show("录入失败");

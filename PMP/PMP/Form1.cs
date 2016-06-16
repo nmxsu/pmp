@@ -22,7 +22,10 @@ namespace PMP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
+            //标记
+            int flag = 0;
+               
             //密码验证
             SqlConnection conn = contact.GetConn();
             SqlCommand cmd = new SqlCommand();
@@ -39,9 +42,48 @@ namespace PMP
                     else PMP.Program.MdiForm = new Mdi(false);
                     this.Close();
                 }
-                else MessageBox.Show("密码错误");
+                else
+                {
+                    flag = 1;
+                }
             }
-            else MessageBox.Show("账号不存在");
+            else
+            {
+                flag = 2;
+            }
+
+            sdr.Close();
+            
+                
+            //查询员工
+            cmd.CommandText = "select [StaffNum] from [Staff] where [Name]=\'" + comboBox1.Text.Trim() + "\'";
+            SqlDataReader sdrl = cmd.ExecuteReader();
+            if (sdrl.Read())
+            {
+                if (string.Compare(textBox1.Text.Trim(), sdrl[0].ToString().Trim()) == 0)
+                {
+                    PMP.Program.MdiForm = new Mdi(false);
+                    this.Close();
+                }
+                else
+                {
+                    flag = 1;
+                }
+            }
+            else
+            {
+                flag = 2;
+            }
+
+            if (flag == 1)
+            {
+                MessageBox.Show("密码错误");
+            }
+
+            if (flag == 2)
+            {
+                MessageBox.Show("账户名错误");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

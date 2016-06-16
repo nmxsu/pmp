@@ -57,10 +57,17 @@ namespace PMP.PublicForm
 
         private void 录入ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            info ss = new info();
-            ss.MdiParent = this;
-            splitContainer1.Panel2.Controls.Add(ss);
-            ss.Show();
+            if (State)
+            {
+                info ss = new info();
+                ss.MdiParent = this;
+                splitContainer1.Panel2.Controls.Add(ss);
+                ss.Show();
+            }
+            else
+            {
+                MessageBox.Show("你的权限不够！");
+            }
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -142,7 +149,12 @@ namespace PMP.PublicForm
 
         private void 注册帐户ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (State)
+            {
+                Register ss = new Register(true);
+                ss.ShowDialog();
+            }
+            else MessageBox.Show("你的权限不够！");
         }
 
         private void 注册普通帐户ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -225,10 +237,26 @@ namespace PMP.PublicForm
 
         private void 增加薪资ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            share ss = new share();
+            share ss = new share(State);
             ss.MdiParent = this;
             splitContainer1.Panel2.Controls.Add(ss);
             ss.Show();
+        }
+
+        private void 查看员工ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            seck s = new seck(true);
+            s.MdiParent = this;
+            splitContainer1.Panel2.Controls.Add(s);
+            s.Show();
+        }
+
+        private void 查询ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            seck s = new seck("check");
+            s.MdiParent = this;
+            splitContainer1.Panel2.Controls.Add(s);
+            s.Show();
         }
     }
 }

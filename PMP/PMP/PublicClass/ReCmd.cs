@@ -17,11 +17,6 @@ namespace PMP.PublicClass
             cmd = new SqlCommand(StrCmd,conn);
             cmd.CommandType = CommandType.Text;
             return cmd.ExecuteReader();
-   
-            {
-
-                
-            }
             
         }
         public static SqlDataAdapter ReDataAdapter(string StrCmd) {

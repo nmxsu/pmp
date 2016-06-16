@@ -37,8 +37,6 @@
             this.修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.查看员工ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.普通查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.统计查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.考勤管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.迟到ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.早退ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,10 +44,9 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.薪资管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.增加薪资ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.系统维护ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.注册帐户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.注册管理员ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.注册普通帐户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.删除帐户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.退出系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,11 +56,10 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
-            this.增加薪资ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -103,50 +99,35 @@
             // 录入ToolStripMenuItem
             // 
             this.录入ToolStripMenuItem.Name = "录入ToolStripMenuItem";
-            this.录入ToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.录入ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.录入ToolStripMenuItem.Text = "录入";
             this.录入ToolStripMenuItem.Click += new System.EventHandler(this.录入ToolStripMenuItem_Click);
             // 
             // 删除ToolStripMenuItem
             // 
             this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.删除ToolStripMenuItem.Text = "删除";
             this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
             // 修改ToolStripMenuItem
             // 
             this.修改ToolStripMenuItem.Name = "修改ToolStripMenuItem";
-            this.修改ToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.修改ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.修改ToolStripMenuItem.Text = "修改";
             this.修改ToolStripMenuItem.Click += new System.EventHandler(this.修改ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(127, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // 查看员工ToolStripMenuItem
             // 
-            this.查看员工ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.普通查询ToolStripMenuItem,
-            this.统计查询ToolStripMenuItem});
             this.查看员工ToolStripMenuItem.Name = "查看员工ToolStripMenuItem";
-            this.查看员工ToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.查看员工ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.查看员工ToolStripMenuItem.Text = "查看员工";
-            // 
-            // 普通查询ToolStripMenuItem
-            // 
-            this.普通查询ToolStripMenuItem.Name = "普通查询ToolStripMenuItem";
-            this.普通查询ToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.普通查询ToolStripMenuItem.Text = "普通查询";
-            this.普通查询ToolStripMenuItem.Click += new System.EventHandler(this.普通查询ToolStripMenuItem_Click_1);
-            // 
-            // 统计查询ToolStripMenuItem
-            // 
-            this.统计查询ToolStripMenuItem.Name = "统计查询ToolStripMenuItem";
-            this.统计查询ToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.统计查询ToolStripMenuItem.Text = "统计查询";
+            this.查看员工ToolStripMenuItem.Click += new System.EventHandler(this.查看员工ToolStripMenuItem_Click);
             // 
             // 考勤管理ToolStripMenuItem
             // 
@@ -163,34 +144,35 @@
             // 迟到ToolStripMenuItem
             // 
             this.迟到ToolStripMenuItem.Name = "迟到ToolStripMenuItem";
-            this.迟到ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.迟到ToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.迟到ToolStripMenuItem.Text = "迟到";
             this.迟到ToolStripMenuItem.Click += new System.EventHandler(this.迟到ToolStripMenuItem_Click);
             // 
             // 早退ToolStripMenuItem
             // 
             this.早退ToolStripMenuItem.Name = "早退ToolStripMenuItem";
-            this.早退ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.早退ToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.早退ToolStripMenuItem.Text = "早退";
             this.早退ToolStripMenuItem.Click += new System.EventHandler(this.早退ToolStripMenuItem_Click);
             // 
             // 事假ToolStripMenuItem
             // 
             this.事假ToolStripMenuItem.Name = "事假ToolStripMenuItem";
-            this.事假ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.事假ToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.事假ToolStripMenuItem.Text = "事假";
             this.事假ToolStripMenuItem.Click += new System.EventHandler(this.事假ToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(99, 6);
             // 
             // 查询ToolStripMenuItem
             // 
             this.查询ToolStripMenuItem.Name = "查询ToolStripMenuItem";
             this.查询ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.查询ToolStripMenuItem.Text = "查询";
+            this.查询ToolStripMenuItem.Click += new System.EventHandler(this.查询ToolStripMenuItem_Click);
             // 
             // 薪资管理ToolStripMenuItem
             // 
@@ -199,6 +181,13 @@
             this.薪资管理ToolStripMenuItem.Name = "薪资管理ToolStripMenuItem";
             this.薪资管理ToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.薪资管理ToolStripMenuItem.Text = "薪资管理";
+            // 
+            // 增加薪资ToolStripMenuItem
+            // 
+            this.增加薪资ToolStripMenuItem.Name = "增加薪资ToolStripMenuItem";
+            this.增加薪资ToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.增加薪资ToolStripMenuItem.Text = "增减薪资";
+            this.增加薪资ToolStripMenuItem.Click += new System.EventHandler(this.增加薪资ToolStripMenuItem_Click);
             // 
             // 系统维护ToolStripMenuItem
             // 
@@ -213,27 +202,10 @@
             // 
             // 注册帐户ToolStripMenuItem
             // 
-            this.注册帐户ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.注册管理员ToolStripMenuItem,
-            this.注册普通帐户ToolStripMenuItem});
             this.注册帐户ToolStripMenuItem.Name = "注册帐户ToolStripMenuItem";
-            this.注册帐户ToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.注册帐户ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.注册帐户ToolStripMenuItem.Text = "注册帐户";
             this.注册帐户ToolStripMenuItem.Click += new System.EventHandler(this.注册帐户ToolStripMenuItem_Click);
-            // 
-            // 注册管理员ToolStripMenuItem
-            // 
-            this.注册管理员ToolStripMenuItem.Name = "注册管理员ToolStripMenuItem";
-            this.注册管理员ToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.注册管理员ToolStripMenuItem.Text = "注册管理员";
-            this.注册管理员ToolStripMenuItem.Click += new System.EventHandler(this.注册管理员ToolStripMenuItem_Click);
-            // 
-            // 注册普通帐户ToolStripMenuItem
-            // 
-            this.注册普通帐户ToolStripMenuItem.Name = "注册普通帐户ToolStripMenuItem";
-            this.注册普通帐户ToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.注册普通帐户ToolStripMenuItem.Text = "注册普通帐户";
-            this.注册普通帐户ToolStripMenuItem.Click += new System.EventHandler(this.注册普通帐户ToolStripMenuItem_Click);
             // 
             // 删除帐户ToolStripMenuItem
             // 
@@ -271,9 +243,9 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.Location = new System.Drawing.Point(0, 52);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -292,9 +264,9 @@
             // 
             // treeView1
             // 
-            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.treeView1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.treeView1.Location = new System.Drawing.Point(3, 1);
             this.treeView1.Name = "treeView1";
@@ -325,11 +297,21 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripSplitButton1
+            // 
+            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripSplitButton1.Image = global::PMP.Properties.Resources.save;
+            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
+            this.toolStripSplitButton1.Size = new System.Drawing.Size(32, 22);
+            this.toolStripSplitButton1.Text = "toolStripSplitButton1";
+            this.toolStripSplitButton1.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
+            // 
             // statusStrip1
             // 
-            this.statusStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.statusStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -362,23 +344,6 @@
             this.imageList1.Images.SetKeyName(7, "8.ico");
             this.imageList1.Images.SetKeyName(8, "9.ico");
             this.imageList1.Images.SetKeyName(9, "10.ico");
-            // 
-            // toolStripSplitButton1
-            // 
-            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSplitButton1.Image = global::PMP.Properties.Resources.save;
-            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
-            this.toolStripSplitButton1.Size = new System.Drawing.Size(32, 22);
-            this.toolStripSplitButton1.Text = "toolStripSplitButton1";
-            this.toolStripSplitButton1.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
-            // 
-            // 增加薪资ToolStripMenuItem
-            // 
-            this.增加薪资ToolStripMenuItem.Name = "增加薪资ToolStripMenuItem";
-            this.增加薪资ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.增加薪资ToolStripMenuItem.Text = "增减薪资";
-            this.增加薪资ToolStripMenuItem.Click += new System.EventHandler(this.增加薪资ToolStripMenuItem_Click);
             // 
             // Mdi
             // 
@@ -423,8 +388,6 @@
         private System.Windows.Forms.ToolStripMenuItem 修改ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem 查看员工ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 普通查询ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 统计查询ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 考勤管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 薪资管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 系统维护ToolStripMenuItem;
@@ -438,8 +401,6 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem 注册帐户ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 注册管理员ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 注册普通帐户ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 删除帐户ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem 退出系统ToolStripMenuItem;

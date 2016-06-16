@@ -19,7 +19,7 @@ namespace PMP.PublicForm
         public string str = null;
         public SqlDataAdapter sda;
         public DataTable dt;
-        public int id;
+        public string id;
         public seck()
         {
             InitializeComponent();
@@ -50,7 +50,7 @@ namespace PMP.PublicForm
         private void seck_Load(object sender, EventArgs e)
         {
             comboBox1.Text = comboBox1.Items[0].ToString();
-            textBox1.Text = str;
+          
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace PMP.PublicForm
             //string titleOnename = StaffTitleUtil.getTitleByNum();
             string titleOneName = StaffTitleUtil.getTitleByNum(355687428096000);//考勤管理
             
-            //string titleTwoName = StaffTitleUtil.getTitleByNum(4485);
+            //string titleTwoName = StaffTitleUtil.getTitleByNum( );
             string StrName=null;
             SqlDataReader sdr = ReCmd.ReDataReader(string.Format("select [StaffName] from [StaffState] where [Name]='{0}'", comboBox1.Text.Trim()));
             if (sdr.Read())
@@ -69,17 +69,35 @@ namespace PMP.PublicForm
                 ReCmd.Close();
                 
                 if (share){
-                    sdr = ReCmd.ReDataReader(string.Format("select [StaffId] from [Staff] where [{0}]='{1}'",StrName,textBox1.Text.Trim()));
-                    sdr.Read();
-                    id = Convert.ToInt32(sdr[0]);
-                    sda = ReCmd.ReDataAdapter(string.Format("select * from [StaffShare] where [numid]={0}",id));
-                    dt=new DataTable();
+                    if (str == null)
+                    {
+                        sdr = ReCmd.ReDataReader(string.Format("select [StaffNum] from [Staff] where [{0}]='{1}'", StrName, textBox1.Text.Trim()));
+                        sdr.Read();
+                        id = sdr[0].ToString().Trim();
+                        sda = ReCmd.ReDataAdapter(string.Format("select money AS 薪资 , numid AS 工号 from [StaffShare] where [numid]={0}", id));
+                        dt = new DataTable();
+                    }
+                    else
+                    {
+
+                    }
                 }
                 else {
-                    
-                    sda = ReCmd.ReDataAdapter(string.Format("select "+titleOneName+" from [Staff] where [{0}]='{1}'",StrName,textBox1.Text.Trim()));
-                 
-                    dt = new DataTable();
+
+                    if (str == null)
+                    {
+                        sda = ReCmd.ReDataAdapter(string.Format("select " + titleOneName + " from [Staff] where [{0}]='{1}'", StrName, textBox1.Text.Trim()));
+
+                        dt = new DataTable();
+                    }else if (str.Equals("check"))
+                    {
+                        sdr = ReCmd.ReDataReader(string.Format("select [StaffNum] from [Staff] where [{0}]='{1}'", StrName, textBox1.Text.Trim()));
+                        sdr.Read();
+                        id = sdr[0].ToString();
+                        sda = ReCmd.ReDataAdapter(string.Format("select [Name] AS 名称, [Resion] AS 原因 , [Da] AS 日期 , [StaffNum] AS 工号 from [StaffCheck] where [StaffNum]='{0}'", id));
+
+                        dt = new DataTable();
+                    }
                      
                 }
                     sda.Fill(dt);
