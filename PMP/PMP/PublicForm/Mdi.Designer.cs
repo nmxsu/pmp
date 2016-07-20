@@ -99,33 +99,33 @@
             // 录入ToolStripMenuItem
             // 
             this.录入ToolStripMenuItem.Name = "录入ToolStripMenuItem";
-            this.录入ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.录入ToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.录入ToolStripMenuItem.Text = "录入";
             this.录入ToolStripMenuItem.Click += new System.EventHandler(this.录入ToolStripMenuItem_Click);
             // 
             // 删除ToolStripMenuItem
             // 
             this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.删除ToolStripMenuItem.Text = "删除";
             this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
             // 修改ToolStripMenuItem
             // 
             this.修改ToolStripMenuItem.Name = "修改ToolStripMenuItem";
-            this.修改ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.修改ToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.修改ToolStripMenuItem.Text = "修改";
             this.修改ToolStripMenuItem.Click += new System.EventHandler(this.修改ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(127, 6);
             // 
             // 查看员工ToolStripMenuItem
             // 
             this.查看员工ToolStripMenuItem.Name = "查看员工ToolStripMenuItem";
-            this.查看员工ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.查看员工ToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.查看员工ToolStripMenuItem.Text = "查看员工";
             this.查看员工ToolStripMenuItem.Click += new System.EventHandler(this.查看员工ToolStripMenuItem_Click);
             // 
@@ -170,7 +170,7 @@
             // 查询ToolStripMenuItem
             // 
             this.查询ToolStripMenuItem.Name = "查询ToolStripMenuItem";
-            this.查询ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.查询ToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.查询ToolStripMenuItem.Text = "查询";
             this.查询ToolStripMenuItem.Click += new System.EventHandler(this.查询ToolStripMenuItem_Click);
             // 
@@ -203,7 +203,7 @@
             // 注册帐户ToolStripMenuItem
             // 
             this.注册帐户ToolStripMenuItem.Name = "注册帐户ToolStripMenuItem";
-            this.注册帐户ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.注册帐户ToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.注册帐户ToolStripMenuItem.Text = "注册帐户";
             this.注册帐户ToolStripMenuItem.Click += new System.EventHandler(this.注册帐户ToolStripMenuItem_Click);
             // 
@@ -258,6 +258,7 @@
             // 
             this.splitContainer1.Panel2.BackgroundImage = global::PMP.Properties.Resources.mdi;
             this.splitContainer1.Panel2.Controls.Add(this.label1);
+            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(1321, 698);
             this.splitContainer1.SplitterDistance = 295;
             this.splitContainer1.TabIndex = 1;

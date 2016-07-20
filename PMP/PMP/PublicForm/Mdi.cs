@@ -258,5 +258,10 @@ namespace PMP.PublicForm
             splitContainer1.Panel2.Controls.Add(s);
             s.Show();
         }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
